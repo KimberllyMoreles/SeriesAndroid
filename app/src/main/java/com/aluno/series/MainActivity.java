@@ -1,5 +1,6 @@
 package com.aluno.series;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     SerieServiceBD serieServiceBD;
+    private static Serie serie = null;
 
     private EditText etNome;
     private EditText etSinopse;
@@ -19,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rbAndamento;
     private RadioButton rbFinalizada;
 
-    private static Serie serie = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,12 +106,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void listar(View v){
-        List<Serie> series = serieServiceBD.getAll();
-        String lista = "";
-        for (Serie serie :
-                series) {
-            lista += "\n" + serie.nome;
-        }
-        Toast.makeText(MainActivity.this, lista, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, ListaActivity.class);
+        startActivity(intent);
     }
+
+
 }
