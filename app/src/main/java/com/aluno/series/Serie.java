@@ -16,12 +16,6 @@ public class Serie implements Serializable {
 
     @Override
     public String toString() {
-        return "Serie{" +
-                "_id=" + _id +
-                ", nome='" + nome + '\'' +
-                ", sinopse='" + sinopse + '\'' +
-                ", diretor='" + diretor + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        return nome;
     }
 }

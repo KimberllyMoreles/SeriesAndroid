@@ -20,17 +20,13 @@ public class ListaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista);
-
         //obtém a instância do objeto de acesso ao banco de dados
         serieServiceBD = SerieServiceBD.getInstance(this);
         //constrói uma instância da classe de modelo
 
         List<Serie> series = serieServiceBD.getAll();
-        List<String> lista = null;
-        for (Serie serieNome :
-                series) {
-            lista.add(serieNome.nome);
-        }
+
+
 
         lvLista = (ListView) findViewById(R.id.lvLista);
 
